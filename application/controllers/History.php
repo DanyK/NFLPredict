@@ -11,7 +11,7 @@ class History extends Application {
 	/**
 	 * Index Page for this controller.
 	 */
-	public function index()
+	public function index() //index function
 	{
             $this->data['pagebody'] = 'history';
             $this->data['pagetitle'] = "History Page";
