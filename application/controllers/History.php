@@ -28,12 +28,18 @@ class History extends Application {
                 echo "Error: " . $this->xmlrpc->display_error();
             }
             
-            
             $dataArray = $this->xmlrpc->display_response();
             echo "<pre>";
             //var_dump($dataArray);
             echo "</pre>";
             $this->table->set_heading('Team', 'Opponent', 'Date','Score');
+            
+            $parms = array(
+                'table_open' => '<table>',
+                'cell_start' => '<td class="oneimage">',
+                'cell_alt_start' => '<td class="oneimage">'
+            );
+            $this->table->set_template($parms);
 
             foreach ($dataArray as $data) {
                 unset($data['number']);
